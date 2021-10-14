@@ -1,6 +1,4 @@
 rm(list = ls())
-# I assumed that you have installed the following R packages. If not, please install 
-# them using the R function: install.packages('package_name')
 library(olsrr)
 library(ggfortify)
 library(ggplot2)
@@ -13,10 +11,16 @@ library(matlib)
 
 # y = Length
 # x = Treatment
-data1 = read.table("Q4.txt", header = TRUE)
+data1 = read.table("BTBData.txt", header = TRUE)
 names(data1)
 head(data1)
 str(data1)
 
-ggplot(data1, aes(x= treatment)) + 
-  stat_count(fill = "cornflowerblue",width = 0.5)+labs(x = "Treament", y = "Frequency(months)") #Not sure why not working with geom_histogram()
+#Not sure why not working with geom_histogram()
+#How to filter out "no" from the dataset?
+ggplot(data1, aes(x=drug)) + 
+  geom_bar(fill = "Blue",width = 0.5)+labs(x = "Drug Use", y = "Frequency") + ggtitle("Patients Taking Anti-Depressants")
+
+ggplot(data1, aes(x=treatment)) + 
+  geom_bar(fill = "Red",width = 0.5)+labs(x = "Treatment", y = "Frequency") + ggtitle("Type of Treament")
+
