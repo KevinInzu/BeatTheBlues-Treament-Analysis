@@ -30,16 +30,6 @@ ggplot(data1, aes(x=bdi.pre)) +
 #Scatter Plot
 ggplot(data1, aes(x=bdi.pre, y = bdi.8m)) + 
   geom_point(color = "steelblue")+labs(x = "Before - bdi.pre ", y = "After- bdi.8m") + ggtitle("Before and After Treatment")
-#Scatter Plot w/ Cars
-ggplot(data2, aes(x= hp, y = mpg)) + 
-  geom_point(color = "steelblue")+labs(x = "hp ", y = "mpg") + ggtitle("HorsePower vs MPG")
-
-fit1 = lm(hp~mpg, data2)
-#Best fitline to scatterplot w/ Cars
-ggplot(data2, aes(x= hp, y = mpg)) + 
-  geom_point(color = "steelblue")+labs(x = "hp ", y = "mpg") + ggtitle("HorsePower vs MPG")+geom_smooth(method= "lm")
-coefficients(fit1)
-# MilesPerGallon = 324.082314 -8.829731(HorsePower)
 
 
 
